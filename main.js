@@ -8,7 +8,7 @@ function modelReady(){
   classifier.classify( gotResults);
 }
 
-function gotResults(error, results) {
+function gotResults(error, results) { /* Aula 107 vai até aqui */
   if (error) {
     console.error(error);
   } else {
@@ -19,30 +19,30 @@ function gotResults(error, results) {
 
     document.getElementById("result_label").innerHTML = 'Posso ouvir - '+ results[0].label;
     document.getElementById("result_confidence").innerHTML = 'Precisão - '+ (results[0].confidence*100).toFixed(2)+" %";
-    document.getElementById("result_label").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_r+")";
-    document.getElementById("result_confidence").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_r+")";
+    document.getElementById("result_label").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
+    document.getElementById("result_confidence").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
 
     img = document.getElementById('dog') 
     img1 = document.getElementById('cat')
     img2 = document.getElementById('cow')
     img3 = document.getElementById('monkey')
 
-    if (results[0].label == "dog") {
+    if (results[0].label == "latir") {
       img.src = 'dog.gif';
       img1.src = 'cat.jpeg';
       img2.src = 'cow.png';
       img3.src = 'monkey.jpg';
-    } else if (results[0].label == "cat") {
+    } else if (results[0].label == "miar") {
       img.src = 'dog.jpeg';
       img1.src = 'cat.gif';
       img2.src = 'cow.png';
       img3.src = 'monkey.jpg';
-    } else if (results[0].label == "cow") {
+    } else if (results[0].label == "mugir") {
       img.src = 'dog.jpeg';
       img1.src = 'cat.jpeg';
       img2.src = 'cow.gif';
       img3.src = 'monkey.jpg';
-    } else if (results[0].label == "monkey") {
+    } else if (results[0].label == "gritar") {
       img.src = 'dog.jpeg';
       img1.src = 'cat.jpeg';
       img2.src = 'cow.png';
